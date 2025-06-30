@@ -108,7 +108,7 @@
                   <h3 class="text-xl font-semibold text-gray-900">
                     Landing Page
                   </h3>
-                  <span class="text-2xl font-bold text-primary">$500</span>
+                  <span class="text-2xl font-bold text-primary">$100</span>
                 </div>
                 <ul class="space-y-2 text-gray-600">
                   <li class="flex items-center">
@@ -125,7 +125,7 @@
                   </li>
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
-                    2 weeks delivery
+                    2 days delivery
                   </li>
                 </ul>
               </div>
@@ -134,9 +134,9 @@
               <div class="pricing-card">
                 <div class="flex items-center justify-between mb-4">
                   <h3 class="text-xl font-semibold text-gray-900">
-                    Business Website
+                    E-commerce Solutions
                   </h3>
-                  <span class="text-2xl font-bold text-primary">$1,500</span>
+                  <span class="text-2xl font-bold text-primary">$500</span>
                 </div>
                 <ul class="space-y-2 text-gray-600">
                   <li class="flex items-center">
@@ -153,7 +153,7 @@
                   </li>
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
-                    4 weeks delivery
+                    1 weeks delivery
                   </li>
                 </ul>
               </div>

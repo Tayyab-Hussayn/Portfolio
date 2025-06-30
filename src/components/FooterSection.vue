@@ -8,7 +8,7 @@
           <div class="lg:col-span-2">
             <div class="mb-6">
               <h3 class="text-2xl font-bold text-white mb-4">
-                Alex Johnson
+                Tayyab Hussayn
               </h3>
               <p class="text-gray-300 leading-relaxed max-w-md">
                 Passionate web developer creating beautiful, responsive websites and web applications. 
@@ -19,7 +19,7 @@
             <!-- Social Media Links -->
             <div class="flex space-x-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/tayyab-hussayn" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="social-icon"

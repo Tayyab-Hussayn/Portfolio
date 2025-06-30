@@ -67,7 +67,7 @@
       </div>
 
       <!-- Scroll Down Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="absolute bottom 8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div class="flex flex-col items-center text-white">
           <span class="text-sm mb-2">Scroll Down</span>
           <i class="fas fa-chevron-down text-xl"></i>

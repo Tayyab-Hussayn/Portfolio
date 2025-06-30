@@ -32,7 +32,7 @@
               </div>
               <div>
                 <h4 class="font-medium text-gray-900">Email</h4>
-                <p class="text-gray-600">alex.johnson@example.com</p>
+                <p class="text-gray-600">tayyabhussayn@gmail.com</p>
               </div>
             </div>
 
@@ -42,7 +42,7 @@
               </div>
               <div>
                 <h4 class="font-medium text-gray-900">Phone</h4>
-                <p class="text-gray-600">+1 (555) 123-4567</p>
+		<p class="text-gray-600">+92 321 3875210</p>
               </div>
             </div>
 
@@ -52,7 +52,7 @@
               </div>
               <div>
                 <h4 class="font-medium text-gray-900">Location</h4>
-                <p class="text-gray-600">San Francisco, CA</p>
+                <p class="text-gray-600">Johar Town, Lahore</p>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
           <div>
             <h4 class="font-medium text-gray-900 mb-4">Follow Me</h4>
             <div class="flex space-x-4">
-              <a href="https://github.com" target="_blank" class="social-link">
+              <a href="https://github.com/tayyab-hussayn" target="_blank" class="social-link">
                 <i class="fab fa-github"></i>
               </a>
               <a href="https://linkedin.com" target="_blank" class="social-link">
