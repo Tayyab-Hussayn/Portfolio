@@ -18,13 +18,22 @@
 
         <!-- Connector Lines to Center -->
         <div class="relative h-16">
-          <svg class="absolute inset-0 w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M12.5% 0 V 100" stroke="#4A5568" stroke-width="2"/>
-            <path d="M37.5% 0 V 50" stroke="#4A5568" stroke-width="2"/>
-            <path d="M62.5% 0 V 50" stroke="#4A5568" stroke-width="2"/>
-            <path d="M87.5% 0 V 100" stroke="#4A5568" stroke-width="2"/>
-            <path d="M12.5% 100 H 87.5%" stroke="#4A5568" stroke-width="2"/>
-            <path d="M50% 50 V 100" stroke="#4A5568" stroke-width="2" stroke-dasharray="4 4"/>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 16" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="connector-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#4A5568;" />
+                <stop offset="100%" style="stop-color:#6B7280;" />
+              </linearGradient>
+            </defs>
+            <!-- Vertical lines from frontend boxes -->
+            <line x1="12.5" y1="0" x2="12.5" y2="16" stroke="url(#connector-gradient)" stroke-width="0.3"/>
+            <line x1="37.5" y1="0" x2="37.5" y2="8" stroke="url(#connector-gradient)" stroke-width="0.3"/>
+            <line x1="62.5" y1="0" x2="62.5" y2="8" stroke="url(#connector-gradient)" stroke-width="0.3"/>
+            <line x1="87.5" y1="0" x2="87.5" y2="16" stroke="url(#connector-gradient)" stroke-width="0.3"/>
+            <!-- Horizontal connecting line -->
+            <line x1="12.5" y1="16" x2="87.5" y2="16" stroke="url(#connector-gradient)" stroke-width="0.3"/>
+            <!-- Center connecting line -->
+            <line x1="50" y1="8" x2="50" y2="16" stroke="url(#connector-gradient)" stroke-width="0.3" stroke-dasharray="1 1"/>
           </svg>
         </div>
 
@@ -40,19 +49,22 @@
 
         <!-- Connector Lines to Bottom -->
         <div class="relative h-16">
-           <svg class="absolute inset-0 w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M50% 0 V 50" stroke="url(#blue-gradient )" stroke-width="3"/>
-            <path d="M12.5% 50 H 87.5%" stroke="url(#blue-gradient)" stroke-width="3"/>
-            <path d="M12.5% 50 V 100" stroke="url(#blue-gradient)" stroke-width="3"/>
-            <path d="M37.5% 50 V 100" stroke="url(#blue-gradient)" stroke-width="3"/>
-            <path d="M62.5% 50 V 100" stroke="url(#blue-gradient)" stroke-width="3"/>
-            <path d="M87.5% 50 V 100" stroke="url(#blue-gradient)" stroke-width="3"/>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 16" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" style="stop-color:#1E40AF;" />
                 <stop offset="100%" style="stop-color:#3B82F6;" />
               </linearGradient>
             </defs>
+            <!-- Center to horizontal line -->
+            <line x1="50" y1="0" x2="50" y2="8" stroke="url(#blue-gradient)" stroke-width="0.4"/>
+            <!-- Main horizontal line -->
+            <line x1="12.5" y1="8" x2="87.5" y2="8" stroke="url(#blue-gradient)" stroke-width="0.4"/>
+            <!-- Vertical lines to backend boxes -->
+            <line x1="12.5" y1="8" x2="12.5" y2="16" stroke="url(#blue-gradient)" stroke-width="0.4"/>
+            <line x1="37.5" y1="8" x2="37.5" y2="16" stroke="url(#blue-gradient)" stroke-width="0.4"/>
+            <line x1="62.5" y1="8" x2="62.5" y2="16" stroke="url(#blue-gradient)" stroke-width="0.4"/>
+            <line x1="87.5" y1="8" x2="87.5" y2="16" stroke="url(#blue-gradient)" stroke-width="0.4"/>
           </svg>
         </div>
 
@@ -125,6 +137,11 @@ export default {
   @apply flex flex-col justify-start text-left;
 }
 
+/* Ensure proper sizing for connector containers */
+.relative.h-16 svg {
+  overflow: visible;
+}
+
 /* Hiding SVG on mobile for a cleaner look */
 @media (max-width: 767px) {
   .relative.h-16 {
@@ -136,4 +153,3 @@ export default {
   }
 }
 </style>
-
