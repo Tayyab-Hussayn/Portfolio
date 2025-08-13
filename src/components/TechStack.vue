@@ -1,79 +1,98 @@
 <template>
-  <section class="bg-gray-900 text-white section-padding">
-    <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">My Development Workflow</h2>
-      <p class="text-lg text-gray-400 mb-16 max-w-2xl mx-auto">
-        From crafting intuitive interfaces to building robust server-side logic.
-      </p>
+  <section class="bg-gray-900 text-white min-h-screen py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          <span class="text-blue-400">The complete development platform.</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-light text-gray-300">
+          Built for developers. Powered by innovation.
+        </h2>
+      </div>
 
-      <div class="workflow-grid">
-        <!-- Top Row: Frontend -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8" id="frontend-row">
-          <div v-for="skill in frontendSkills" :key="skill.name" class="workflow-item">
-            <div class="workflow-box">
-              <span class="text-lg font-semibold">{{ skill.name }}</span>
+      <!-- Workflow Diagram -->
+      <div class="relative">
+        <!-- Top Row - Frontend Technologies -->
+        <div class="flex justify-center gap-8 mb-16">
+          <div 
+            v-for="tech in frontendTechs" 
+            :key="tech"
+            class="workflow-box"
+          >
+            {{ tech }}
+          </div>
+        </div>
+
+        <!-- Connection Lines Container -->
+        <div class="absolute inset-0 pointer-events-none">
+          <!-- SVG for all connection lines -->
+          <svg class="w-full h-full" style="position: absolute; top: 0; left: 0;">
+            <defs>
+              <!-- Gray gradient for top connections -->
+              <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#6B7280"/>
+                <stop offset="100%" style="stop-color:#9CA3AF"/>
+              </linearGradient>
+              <!-- Blue gradient for bottom connections -->
+              <linearGradient id="bottomGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#1E40AF"/>
+                <stop offset="100%" style="stop-color:#3B82F6"/>
+              </linearGradient>
+            </defs>
+            
+            <!-- Top connections (Frontend to Center) -->
+            <!-- Vertical lines down from each frontend box -->
+            <line x1="20%" y1="15%" x2="20%" y2="30%" stroke="url(#topGrad)" stroke-width="2"/>
+            <line x1="40%" y1="15%" x2="40%" y2="25%" stroke="url(#topGrad)" stroke-width="2"/>
+            <line x1="60%" y1="15%" x2="60%" y2="25%" stroke="url(#topGrad)" stroke-width="2"/>
+            <line x1="80%" y1="15%" x2="80%" y2="30%" stroke="url(#topGrad)" stroke-width="2"/>
+            
+            <!-- Horizontal connecting lines -->
+            <line x1="20%" y1="30%" x2="80%" y2="30%" stroke="url(#topGrad)" stroke-width="2"/>
+            <line x1="40%" y1="25%" x2="60%" y2="25%" stroke="url(#topGrad)" stroke-width="2"/>
+            
+            <!-- Center connection -->
+            <line x1="50%" y1="25%" x2="50%" y2="30%" stroke="url(#topGrad)" stroke-width="2"/>
+            <line x1="50%" y1="30%" x2="50%" y2="40%" stroke="url(#topGrad)" stroke-width="2" stroke-dasharray="5,5"/>
+
+            <!-- Bottom connections (Center to Backend) -->
+            <!-- Center down -->
+            <line x1="50%" y1="60%" x2="50%" y2="70%" stroke="url(#bottomGrad)" stroke-width="3"/>
+            <!-- Horizontal distribution -->
+            <line x1="15%" y1="70%" x2="85%" y2="70%" stroke="url(#bottomGrad)" stroke-width="3"/>
+            <!-- Vertical lines to backend boxes -->
+            <line x1="22.5%" y1="70%" x2="22.5%" y2="85%" stroke="url(#bottomGrad)" stroke-width="3"/>
+            <line x1="40%" y1="70%" x2="40%" y2="85%" stroke="url(#bottomGrad)" stroke-width="3"/>
+            <line x1="60%" y1="70%" x2="60%" y2="85%" stroke="url(#bottomGrad)" stroke-width="3"/>
+            <line x1="77.5%" y1="70%" x2="77.5%" y2="85%" stroke="url(#bottomGrad)" stroke-width="3"/>
+          </svg>
+        </div>
+
+        <!-- Center Box -->
+        <div class="flex justify-center mb-16" style="position: relative; z-index: 10;">
+          <div class="workflow-box center-box">
+            <div class="flex flex-col items-center">
+              <div class="w-8 h-8 mb-3 text-blue-400">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <span class="text-xl font-bold">Core Tech Stack</span>
             </div>
           </div>
         </div>
 
-        <!-- Connector Lines to Center -->
-        <div class="relative h-16">
-          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 16" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="connector-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#4A5568;" />
-                <stop offset="100%" style="stop-color:#6B7280;" />
-              </linearGradient>
-            </defs>
-            <!-- Vertical lines from frontend boxes -->
-            <line x1="12.5" y1="0" x2="12.5" y2="16" stroke="url(#connector-gradient)" stroke-width="0.3"/>
-            <line x1="37.5" y1="0" x2="37.5" y2="8" stroke="url(#connector-gradient)" stroke-width="0.3"/>
-            <line x1="62.5" y1="0" x2="62.5" y2="8" stroke="url(#connector-gradient)" stroke-width="0.3"/>
-            <line x1="87.5" y1="0" x2="87.5" y2="16" stroke="url(#connector-gradient)" stroke-width="0.3"/>
-            <!-- Horizontal connecting line -->
-            <line x1="12.5" y1="16" x2="87.5" y2="16" stroke="url(#connector-gradient)" stroke-width="0.3"/>
-            <!-- Center connecting line -->
-            <line x1="50" y1="8" x2="50" y2="16" stroke="url(#connector-gradient)" stroke-width="0.3" stroke-dasharray="1 1"/>
-          </svg>
-        </div>
-
-        <!-- Central Box -->
-        <div class="flex justify-center items-center" id="center-box">
-          <div class="workflow-box central-box bg-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-3 mx-auto text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-            </svg>
-            <span class="text-xl font-bold">Core Tech Stack</span>
-          </div>
-        </div>
-
-        <!-- Connector Lines to Bottom -->
-        <div class="relative h-16">
-          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 16" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#1E40AF;" />
-                <stop offset="100%" style="stop-color:#3B82F6;" />
-              </linearGradient>
-            </defs>
-            <!-- Center to horizontal line -->
-            <line x1="50" y1="0" x2="50" y2="8" stroke="url(#blue-gradient)" stroke-width="0.4"/>
-            <!-- Main horizontal line -->
-            <line x1="12.5" y1="8" x2="87.5" y2="8" stroke="url(#blue-gradient)" stroke-width="0.4"/>
-            <!-- Vertical lines to backend boxes -->
-            <line x1="12.5" y1="8" x2="12.5" y2="16" stroke="url(#blue-gradient)" stroke-width="0.4"/>
-            <line x1="37.5" y1="8" x2="37.5" y2="16" stroke="url(#blue-gradient)" stroke-width="0.4"/>
-            <line x1="62.5" y1="8" x2="62.5" y2="16" stroke="url(#blue-gradient)" stroke-width="0.4"/>
-            <line x1="87.5" y1="8" x2="87.5" y2="16" stroke="url(#blue-gradient)" stroke-width="0.4"/>
-          </svg>
-        </div>
-
-        <!-- Bottom Row: Backend -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="backend-row">
-          <div v-for="skill in backendSkills" :key="skill.name" class="workflow-item">
-            <div class="workflow-box detailed-box">
-              <h4 class="text-lg font-semibold text-primary mb-2">{{ skill.name }}</h4>
-              <p class="text-gray-400 text-sm">{{ skill.description }}</p>
+        <!-- Bottom Row - Backend Technologies -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div 
+            v-for="tech in backendTechs" 
+            :key="tech.name"
+            class="workflow-box backend-box"
+          >
+            <div class="text-left">
+              <h3 class="text-lg font-semibold text-blue-400 mb-2">{{ tech.name }}</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">{{ tech.description }}</p>
             </div>
           </div>
         </div>
@@ -84,72 +103,135 @@
 
 <script>
 export default {
-  name: 'TechStack',
-  setup() {
-    const frontendSkills = [
-      { name: 'Vue.js' },
-      { name: 'React' },
-      { name: 'JavaScript (ES6+)' },
-      { name: 'Tailwind CSS' },
-    ];
-
-    const backendSkills = [
-      {
-        name: 'Node.js & Express',
-        description: 'For building fast, scalable REST APIs.',
-      },
-      {
-        name: 'Python & Django',
-        description: 'For complex applications and data processing.',
-      },
-      {
-        name: 'Database Architecture',
-        description: 'Using MongoDB for flexible, scalable data storage.',
-      },
-      {
-        name: 'Server-Side Logic',
-        description: 'Crafting secure and efficient backend systems.',
-      },
-    ];
-
+  name: 'TechWorkflow',
+  data() {
     return {
-      frontendSkills,
-      backendSkills,
-    };
-  },
-};
+      frontendTechs: [
+        'Vue.js',
+        'React',
+        'JavaScript (ES6+)',
+        'Tailwind CSS'
+      ],
+      backendTechs: [
+        {
+          name: 'Node.js & Express',
+          description: 'For building fast, scalable REST APIs and server-side applications.'
+        },
+        {
+          name: 'Python & Django',
+          description: 'For complex web applications and data processing workflows.'
+        },
+        {
+          name: 'Database Architecture',
+          description: 'Using MongoDB and PostgreSQL for flexible, scalable data storage.'
+        },
+        {
+          name: 'Server-Side Logic',
+          description: 'Crafting secure and efficient backend systems and microservices.'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style scoped>
+/* Workflow boxes */
 .workflow-box {
-  @apply bg-gray-800 border border-gray-700 rounded-xl p-6 h-full transition-all duration-300;
+  background: rgba(31, 41, 55, 0.8);
+  border: 1px solid rgba(75, 85, 99, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 5;
 }
 
-.workflow-item:hover .workflow-box {
-  @apply border-primary transform -translate-y-2 shadow-lg shadow-primary/20;
+.workflow-box:hover {
+  border-color: rgba(59, 130, 246, 0.8);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+  background: rgba(31, 41, 55, 0.95);
 }
 
-.central-box {
-  @apply border-primary shadow-2xl shadow-primary/30 max-w-xs mx-auto;
+/* Center box styling */
+.center-box {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.3), rgba(59, 130, 246, 0.2));
+  border: 2px solid rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+  min-width: 250px;
 }
 
-.detailed-box {
-  @apply flex flex-col justify-start text-left;
+/* Backend boxes */
+.backend-box {
+  min-height: 140px;
+  display: flex;
+  align-items: flex-start;
 }
 
-/* Ensure proper sizing for connector containers */
-.relative.h-16 svg {
+/* SVG lines */
+svg {
   overflow: visible;
 }
 
-/* Hiding SVG on mobile for a cleaner look */
-@media (max-width: 767px) {
-  .relative.h-16 {
+svg line {
+  opacity: 0.8;
+}
+
+svg line:hover {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .workflow-box {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Hide connection lines on smaller screens */
+  svg {
     display: none;
   }
-  #center-box {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .flex.justify-center.gap-8 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .workflow-box {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .center-box {
+    min-width: 200px;
+  }
+}
+
+/* Animation for smooth appearance */
+.workflow-box {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.workflow-box:nth-child(1) { animation-delay: 0.1s; }
+.workflow-box:nth-child(2) { animation-delay: 0.2s; }
+.workflow-box:nth-child(3) { animation-delay: 0.3s; }
+.workflow-box:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
