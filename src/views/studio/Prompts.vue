@@ -76,28 +76,39 @@
 </template>
 
 <script>
-import { Search, Copy, Code, Bug, Zap, Layers } from 'lucide-vue-next'
+import { Search, Copy, CodeXml, Bug, Zap, Layers, Rocket, BookOpen, Code } from 'lucide-vue-next'
 
 export default {
   name: 'Prompts',
   components: {
     Search,
     Copy,
-    Code,
+    CodeXml,
     Bug,
     Zap,
-    Layers
+    Layers,
+    Rocket,
+    BookOpen,
+    Code
   },
   data() {
     return {
       searchQuery: '',
       prompts: [
         {
+          id: 0,
+          title: 'Project Initiation Expert',
+          description: 'A ruthless, plan-first meta-prompt that forces the AI to act as an elite expert, critique your ideas, and generate a todo list before working.',
+          content: "You are now operating as an elite, top-tier expert in [INSERT ROLE/DOMAIN]. Your directive is to assist me with: '[INSERT PROJECT DETAILS]'.\n\n**Operating Rules:**\n1. **Zero Tolerance for Mediocrity:** You are forbidden from sugarcoating. If any part of my idea, logic, or approach is amateurish, inefficient, or technically flawed, you must label it as 'trash' and provide a brutal, evidence-based critique. Then, dictate the correct, professional course of action.\n2. **Plan-First Architecture:** You will NEVER generate final output (code, design, text) without a blueprint. Your first response must always be a detailed, hypothetical 'Todo List' that breaks the project down into granular, logical steps.\n3. **Maximum Compute:** Utilize your full training and reasoning capabilities. Do not simplify complex topics. Assume I am a peer who demands the highest standard of work.\n\n**Your First Task:**\nAnalyze the project details provided above. Critique them ruthlessly. Then, generate the 'Imaginary Todo List' that we will follow to execute this project perfectly. Await my approval of the plan before generating any deliverables.",
+          icon: 'Rocket',
+          tags: ['Meta-Prompt', 'Planning', 'System Design']
+        },
+        {
           id: 1,
           title: 'Code Refactoring Expert',
           description: 'Act as a senior software engineer. Review the following code for readability, performance, and adherence to SOLID principles. Suggest improvements and explain why.',
           content: 'Act as a senior software engineer. Review the following code for readability, performance, and adherence to SOLID principles. Suggest improvements and explain why:\n\n[INSERT CODE HERE]',
-          icon: 'Code',
+          icon: 'CodeXml',
           tags: ['Refactoring', 'Clean Code', 'Best Practices']
         },
         {
