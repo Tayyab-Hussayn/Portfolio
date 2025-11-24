@@ -66,7 +66,7 @@
                     </div>
                     
                     <div class="ml-5">
-                      <h3 class="text-base font-bold font-mono text-gray-900 group-hover/item:text-primary transition-colors flex items-center gap-2">
+                      <h3 class="text-base font-bold font-mono text-gray-900 group-hover/item:text-primary transition-colors flex items-center gap-4">
                         {{ item.name }}
                         <span class="opacity-0 group-hover/item:opacity-100 transition-opacity text-xs text-primary">-></span>
                       </h3>
