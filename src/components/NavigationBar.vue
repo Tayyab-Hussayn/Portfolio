@@ -12,14 +12,13 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-8">
+            <!-- Home Link -->
             <router-link
-              v-for="item in navItems"
-              :key="item.name"
-              :to="item.path"
+              to="/"
               class="nav-link"
-              :class="{ 'nav-link-active': $route.path === item.path }"
+              :class="{ 'nav-link-active': $route.path === '/' }"
             >
-              {{ item.name }}
+              Home
             </router-link>
 
             <!-- Studio Mega Menu -->
@@ -75,6 +74,17 @@
               </div>
             </div>
 
+            <!-- Other Links -->
+            <router-link
+              v-for="item in navItems"
+              :key="item.name"
+              :to="item.path"
+              class="nav-link"
+              :class="{ 'nav-link-active': $route.path === item.path }"
+            >
+              {{ item.name }}
+            </router-link>
+
             <button
               @click="$emit('openLogin')"
               class="btn-primary text-sm"
@@ -98,15 +108,14 @@
       <!-- Mobile Navigation -->
       <div v-if="isMobileMenuOpen" class="md:hidden h-[calc(100vh-4rem)] overflow-y-auto">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+          <!-- Mobile Home -->
           <router-link
-            v-for="item in navItems"
-            :key="item.name"
-            :to="item.path"
+            to="/"
             @click="closeMobileMenu"
             class="mobile-nav-link"
-            :class="{ 'mobile-nav-link-active': $route.path === item.path }"
+            :class="{ 'mobile-nav-link-active': $route.path === '/' }"
           >
-            {{ item.name }}
+            Home
           </router-link>
 
           <!-- Mobile Studio Menu -->
@@ -136,6 +145,18 @@
               </router-link>
             </div>
           </div>
+
+          <!-- Other Mobile Links -->
+          <router-link
+            v-for="item in navItems"
+            :key="item.name"
+            :to="item.path"
+            @click="closeMobileMenu"
+            class="mobile-nav-link"
+            :class="{ 'mobile-nav-link-active': $route.path === item.path }"
+          >
+            {{ item.name }}
+          </router-link>
 
           <button
             @click="$emit('openLogin'); closeMobileMenu()"
@@ -168,7 +189,6 @@ export default {
       isStudioOpen: false,
       isMobileStudioOpen: false,
       navItems: [
-        { name: 'Home', path: '/' },
         { name: 'Projects', path: '/projects' },
         { name: 'Contact Us', path: '/contact' },
         { name: 'Hire a Developer', path: '/hire' }
