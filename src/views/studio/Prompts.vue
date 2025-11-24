@@ -36,11 +36,13 @@
               <component :is="prompt.icon" class="w-6 h-6" />
             </div>
             <button 
-              @click="copyPrompt(prompt.content)"
+              @click="copyPrompt(prompt.content, prompt.id)"
               class="text-gray-400 hover:text-primary transition-colors"
-              title="Copy Prompt"
+              :class="{ 'text-green-500 hover:text-green-600': copiedPromptId === prompt.id }"
+              :title="copiedPromptId === prompt.id ? 'Copied!' : 'Copy Prompt'"
             >
-              <Copy class="w-5 h-5" />
+              <Check v-if="copiedPromptId === prompt.id" class="w-5 h-5" />
+              <Copy v-else class="w-5 h-5" />
             </button>
           </div>
           
@@ -76,13 +78,14 @@
 </template>
 
 <script>
-import { Search, Copy, CodeXml, Bug, Zap, Layers, Rocket, BookOpen, Code } from 'lucide-vue-next'
+import { Search, Copy, Check, CodeXml, Bug, Zap, Layers, Rocket, BookOpen, Code } from 'lucide-vue-next'
 
 export default {
   name: 'Prompts',
   components: {
     Search,
     Copy,
+    Check,
     CodeXml,
     Bug,
     Zap,
@@ -94,6 +97,7 @@ export default {
   data() {
     return {
       searchQuery: '',
+      copiedPromptId: null,
       prompts: [
         {
           id: 0,
@@ -166,9 +170,13 @@ export default {
     }
   },
   methods: {
-    async copyPrompt(content) {
+    async copyPrompt(content, id) {
       try {
         await navigator.clipboard.writeText(content)
+        this.copiedPromptId = id
+        setTimeout(() => {
+          this.copiedPromptId = null
+        }, 2000)
       } catch (err) {
         console.error('Failed to copy:', err)
       }
