@@ -214,7 +214,7 @@ export default {
           description: 'Curated AI prompts for developers'
         },
         { 
-          name: 'Dotfiles & Scripts', 
+          name: 'Dotfiles', 
           path: '/studio/dotfiles', 
           icon: 'https://cdn-icons-png.flaticon.com/512/4248/4248082.png',
           description: 'System configurations and automation'
