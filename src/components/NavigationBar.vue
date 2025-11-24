@@ -15,8 +15,8 @@
             <!-- Home Link -->
             <router-link
               to="/"
-              class="nav-link"
-              :class="{ 'nav-link-active': $route.path === '/' }"
+              class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative text-gray-700 hover:text-primary"
+              active-class="text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
             >
               Home
             </router-link>
@@ -28,7 +28,7 @@
               @mouseleave="closeStudio"
             >
               <button 
-                class="nav-link flex items-center gap-1 group-hover:text-primary"
+                class="flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative text-gray-700 hover:text-primary group-hover:text-primary"
                 :class="{ 'text-primary': isStudioOpen }"
               >
                 Studio
@@ -95,8 +95,8 @@
               v-for="item in navItems"
               :key="item.name"
               :to="item.path"
-              class="nav-link"
-              :class="{ 'nav-link-active': $route.path === item.path }"
+              class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative text-gray-700 hover:text-primary"
+              active-class="text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
             >
               {{ item.name }}
             </router-link>
@@ -128,8 +128,8 @@
           <router-link
             to="/"
             @click="closeMobileMenu"
-            class="mobile-nav-link"
-            :class="{ 'mobile-nav-link-active': $route.path === '/' }"
+            class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 text-gray-700 hover:text-primary hover:bg-gray-50"
+            active-class="text-primary bg-blue-50"
           >
             Home
           </router-link>
@@ -138,7 +138,7 @@
           <div class="space-y-1">
             <button 
               @click="isMobileStudioOpen = !isMobileStudioOpen"
-              class="w-full flex items-center justify-between mobile-nav-link"
+              class="w-full flex items-center justify-between block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 text-gray-700 hover:text-primary hover:bg-gray-50"
               :class="{ 'text-primary bg-blue-50': isMobileStudioOpen }"
             >
               Studio
@@ -168,15 +168,15 @@
             :key="item.name"
             :to="item.path"
             @click="closeMobileMenu"
-            class="mobile-nav-link"
-            :class="{ 'mobile-nav-link-active': $route.path === item.path }"
+            class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 text-gray-700 hover:text-primary hover:bg-gray-50"
+            active-class="text-primary bg-blue-50"
           >
             {{ item.name }}
           </router-link>
 
           <button
             @click="$emit('openLogin'); closeMobileMenu()"
-            class="w-full text-left mobile-nav-link"
+            class="w-full text-left block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 text-gray-700 hover:text-primary hover:bg-gray-50"
           >
             Login
           </button>
@@ -267,29 +267,5 @@ export default {
 </script>
 
 <style scoped>
-.nav-link {
-  @apply text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative;
-}
-
-.nav-link:hover {
-  @apply text-primary;
-}
-
-.nav-link-active {
-  @apply text-primary;
-}
-
-.nav-link-active::after {
-  content: '';
-  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-primary;
-}
-
-.mobile-nav-link {
-  @apply text-gray-700 hover:text-primary hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200;
-}
-
-.mobile-nav-link-active {
-  @apply text-primary bg-blue-50;
-}
+/* Styles removed and moved to template to fix @apply linting issues */
 </style>
-

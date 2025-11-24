@@ -1,8 +1,8 @@
 <template>
-  <div class="project-card group">
+  <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
     <!-- Project Image -->
     <div class="relative overflow-hidden rounded-t-xl">
-      <div class="project-image-placeholder">
+      <div class="relative overflow-hidden">
         <!-- Placeholder for project image -->
         <div class="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
           <i class="fas fa-image text-4xl text-white opacity-50"></i>
@@ -18,7 +18,7 @@
             :href="project.liveUrl" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="btn-overlay"
+            class="bg-white text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105"
           >
             <i class="fas fa-external-link-alt mr-2"></i>
             Live Preview
@@ -27,7 +27,7 @@
             :href="project.githubUrl" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="btn-overlay-secondary"
+            class="bg-transparent border-2 border-white text-white px-4 py-2 rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-200 transform hover:scale-105"
           >
             <i class="fab fa-github mr-2"></i>
             Code
@@ -37,7 +37,7 @@
 
       <!-- Category Badge -->
       <div class="absolute top-4 left-4">
-        <span class="category-badge">
+        <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-medium">
           {{ project.category }}
         </span>
       </div>
@@ -59,7 +59,7 @@
           <span 
             v-for="tech in project.techStack" 
             :key="tech"
-            class="tech-tag"
+            class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-200 transition-colors duration-200"
           >
             {{ tech }}
           </span>
@@ -72,7 +72,7 @@
           :href="project.liveUrl" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="btn-primary-small flex-1 text-center"
+          class="bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm flex-1 text-center"
         >
           <i class="fas fa-eye mr-2"></i>
           Live Preview
@@ -81,7 +81,7 @@
           :href="project.githubUrl" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="btn-secondary-small"
+          class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-3 rounded-lg transition-all duration-300 transform hover:scale-105"
         >
           <i class="fab fa-github"></i>
         </a>
@@ -103,36 +103,5 @@ export default {
 </script>
 
 <style scoped>
-.project-card {
-  @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden;
-}
-
-.project-image-placeholder {
-  @apply relative overflow-hidden;
-}
-
-.btn-overlay {
-  @apply bg-white text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105;
-}
-
-.btn-overlay-secondary {
-  @apply bg-transparent border-2 border-white text-white px-4 py-2 rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-200 transform hover:scale-105;
-}
-
-.category-badge {
-  @apply bg-primary text-white px-3 py-1 rounded-full text-xs font-medium;
-}
-
-.tech-tag {
-  @apply bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-200 transition-colors duration-200;
-}
-
-.btn-primary-small {
-  @apply bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm;
-}
-
-.btn-secondary-small {
-  @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-3 rounded-lg transition-all duration-300 transform hover:scale-105;
-}
+/* Styles removed and moved to template to fix @apply linting issues */
 </style>
-

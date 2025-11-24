@@ -22,7 +22,7 @@
                 href="https://github.com/tayyab-hussayn" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="social-icon"
+                class="w-10 h-10 bg-gray-700 hover:bg-primary text-gray-300 hover:text-white rounded-full flex items-center justify-center text-lg transition-all duration-300 transform hover:scale-110"
                 aria-label="GitHub"
               >
                 <i class="fab fa-github"></i>
@@ -31,7 +31,7 @@
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="social-icon"
+                class="w-10 h-10 bg-gray-700 hover:bg-primary text-gray-300 hover:text-white rounded-full flex items-center justify-center text-lg transition-all duration-300 transform hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <i class="fab fa-linkedin"></i>
@@ -40,7 +40,7 @@
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="social-icon"
+                class="w-10 h-10 bg-gray-700 hover:bg-primary text-gray-300 hover:text-white rounded-full flex items-center justify-center text-lg transition-all duration-300 transform hover:scale-110"
                 aria-label="Twitter"
               >
                 <i class="fab fa-twitter"></i>
@@ -49,7 +49,7 @@
                 href="https://dribbble.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="social-icon"
+                class="w-10 h-10 bg-gray-700 hover:bg-primary text-gray-300 hover:text-white rounded-full flex items-center justify-center text-lg transition-all duration-300 transform hover:scale-110"
                 aria-label="Dribbble"
               >
                 <i class="fab fa-dribbble"></i>
@@ -58,7 +58,7 @@
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="social-icon"
+                class="w-10 h-10 bg-gray-700 hover:bg-primary text-gray-300 hover:text-white rounded-full flex items-center justify-center text-lg transition-all duration-300 transform hover:scale-110"
                 aria-label="Instagram"
               >
                 <i class="fab fa-instagram"></i>
@@ -71,22 +71,22 @@
             <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
             <ul class="space-y-3">
               <li>
-                <router-link to="/" class="footer-link">
+                <router-link to="/" class="text-gray-300 hover:text-white transition-colors duration-200">
                   Home
                 </router-link>
               </li>
               <li>
-                <router-link to="/projects" class="footer-link">
+                <router-link to="/projects" class="text-gray-300 hover:text-white transition-colors duration-200">
                   Projects
                 </router-link>
               </li>
               <li>
-                <router-link to="/contact" class="footer-link">
+                <router-link to="/contact" class="text-gray-300 hover:text-white transition-colors duration-200">
                   Contact
                 </router-link>
               </li>
               <li>
-                <router-link to="/hire" class="footer-link">
+                <router-link to="/hire" class="text-gray-300 hover:text-white transition-colors duration-200">
                   Hire Me
                 </router-link>
               </li>
@@ -98,22 +98,22 @@
             <h4 class="text-lg font-semibold mb-6">Services</h4>
             <ul class="space-y-3">
               <li>
-                <a href="#" class="footer-link">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
                   Web Development
                 </a>
               </li>
               <li>
-                <a href="#" class="footer-link">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
                   UI/UX Design
                 </a>
               </li>
               <li>
-                <a href="#" class="footer-link">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
                   SEO Optimization
                 </a>
               </li>
               <li>
-                <a href="#" class="footer-link">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
                   Consulting
                 </a>
               </li>
@@ -132,9 +132,9 @@
               <input
                 type="email"
                 placeholder="Enter your email"
-                class="newsletter-input"
+                class="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:border-transparent"
               >
-              <button class="newsletter-btn">
+              <button class="bg-primary hover:bg-secondary text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
                 Subscribe
               </button>
             </div>
@@ -156,13 +156,13 @@
 
           <!-- Back to Top & Additional Links -->
           <div class="flex items-center space-x-6">
-            <a href="#" class="footer-link text-sm">Privacy Policy</a>
-            <a href="#" class="footer-link text-sm">Terms of Service</a>
+            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm">Privacy Policy</a>
+            <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm">Terms of Service</a>
             
             <!-- Back to Top Button -->
             <button 
               @click="scrollToTop"
-              class="back-to-top"
+              class="w-10 h-10 bg-primary hover:bg-secondary text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
               aria-label="Back to top"
             >
               <i class="fas fa-chevron-up"></i>
@@ -194,24 +194,5 @@ export default {
 </script>
 
 <style scoped>
-.social-icon {
-  @apply w-10 h-10 bg-gray-700 hover:bg-primary text-gray-300 hover:text-white rounded-full flex items-center justify-center text-lg transition-all duration-300 transform hover:scale-110;
-}
-
-.footer-link {
-  @apply text-gray-300 hover:text-white transition-colors duration-200;
-}
-
-.newsletter-input {
-  @apply flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:border-transparent;
-}
-
-.newsletter-btn {
-  @apply bg-primary hover:bg-secondary text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105;
-}
-
-.back-to-top {
-  @apply w-10 h-10 bg-primary hover:bg-secondary text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110;
-}
+/* Styles removed and moved to template to fix @apply linting issues */
 </style>
-

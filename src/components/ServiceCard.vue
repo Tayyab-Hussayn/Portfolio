@@ -1,7 +1,7 @@
 <template>
-  <div class="service-card group">
+  <div class="relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden group">
     <!-- Icon Container -->
-    <div class="icon-container" :class="iconColorClass">
+    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mt-8 mb-4 transition-all duration-300" :class="iconColorClass">
       <i :class="service.icon" class="text-3xl"></i>
     </div>
 
@@ -55,12 +55,5 @@ export default {
 </script>
 
 <style scoped>
-.service-card {
-  @apply relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden;
-}
-
-.icon-container {
-  @apply w-16 h-16 rounded-full flex items-center justify-center mx-auto mt-8 mb-4 transition-all duration-300;
-}
+/* Styles removed and moved to template to fix @apply linting issues */
 </style>
-

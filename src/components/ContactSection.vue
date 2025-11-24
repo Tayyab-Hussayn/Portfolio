@@ -27,7 +27,7 @@
           <!-- Contact Details -->
           <div class="space-y-6">
             <div class="flex items-center space-x-4">
-              <div class="contact-icon bg-blue-100 text-blue-600">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl bg-blue-100 text-blue-600">
                 <i class="fas fa-envelope"></i>
               </div>
               <div>
@@ -37,7 +37,7 @@
             </div>
 
             <div class="flex items-center space-x-4">
-              <div class="contact-icon bg-green-100 text-green-600">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl bg-green-100 text-green-600">
                 <i class="fas fa-phone"></i>
               </div>
               <div>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="flex items-center space-x-4">
-              <div class="contact-icon bg-purple-100 text-purple-600">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl bg-purple-100 text-purple-600">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
               <div>
@@ -61,16 +61,16 @@
           <div>
             <h4 class="font-medium text-gray-900 mb-4">Follow Me</h4>
             <div class="flex space-x-4">
-              <a href="https://github.com/tayyab-hussayn" target="_blank" class="social-link">
+              <a href="https://github.com/tayyab-hussayn" target="_blank" class="w-10 h-10 bg-gray-100 hover:bg-primary text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" class="social-link">
+              <a href="https://linkedin.com" target="_blank" class="w-10 h-10 bg-gray-100 hover:bg-primary text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                 <i class="fab fa-linkedin"></i>
               </a>
-              <a href="https://twitter.com" target="_blank" class="social-link">
+              <a href="https://twitter.com" target="_blank" class="w-10 h-10 bg-gray-100 hover:bg-primary text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="https://dribbble.com" target="_blank" class="social-link">
+              <a href="https://dribbble.com" target="_blank" class="w-10 h-10 bg-gray-100 hover:bg-primary text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                 <i class="fab fa-dribbble"></i>
               </a>
             </div>
@@ -81,71 +81,71 @@
         <div class="bg-white rounded-2xl shadow-xl p-8">
           <form @submit.prevent="submitForm" class="space-y-6">
             <!-- Success Message -->
-            <div v-if="showSuccess" class="success-message">
+            <div v-if="showSuccess" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg flex items-center">
               <i class="fas fa-check-circle mr-2"></i>
               Thank you! Your message has been sent successfully.
             </div>
 
             <!-- Name Field -->
             <div>
-              <label for="name" class="form-label">
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
                 Full Name *
               </label>
               <input
                 id="name"
                 v-model="form.name"
                 type="text"
-                class="form-input"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                 :class="{ 'border-red-500': errors.name }"
                 placeholder="Enter your full name"
               >
-              <p v-if="errors.name" class="error-message">{{ errors.name }}</p>
+              <p v-if="errors.name" class="text-red-500 text-sm mt-1">{{ errors.name }}</p>
             </div>
 
             <!-- Email Field -->
             <div>
-              <label for="email" class="form-label">
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
                 Email Address *
               </label>
               <input
                 id="email"
                 v-model="form.email"
                 type="email"
-                class="form-input"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                 :class="{ 'border-red-500': errors.email }"
                 placeholder="Enter your email address"
               >
-              <p v-if="errors.email" class="error-message">{{ errors.email }}</p>
+              <p v-if="errors.email" class="text-red-500 text-sm mt-1">{{ errors.email }}</p>
             </div>
 
             <!-- Subject Field -->
             <div>
-              <label for="subject" class="form-label">
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
                 Subject
               </label>
               <input
                 id="subject"
                 v-model="form.subject"
                 type="text"
-                class="form-input"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                 placeholder="What's this about?"
               >
             </div>
 
             <!-- Message Field -->
             <div>
-              <label for="message" class="form-label">
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
                 Message *
               </label>
               <textarea
                 id="message"
                 v-model="form.message"
                 rows="5"
-                class="form-input resize-none"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
                 :class="{ 'border-red-500': errors.message }"
                 placeholder="Tell me about your project..."
               ></textarea>
-              <p v-if="errors.message" class="error-message">{{ errors.message }}</p>
+              <p v-if="errors.message" class="text-red-500 text-sm mt-1">{{ errors.message }}</p>
             </div>
 
             <!-- Submit Button -->
@@ -254,28 +254,5 @@ export default {
 </script>
 
 <style scoped>
-.contact-icon {
-  @apply w-12 h-12 rounded-full flex items-center justify-center text-xl;
-}
-
-.social-link {
-  @apply w-10 h-10 bg-gray-100 hover:bg-primary text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110;
-}
-
-.form-label {
-  @apply block text-sm font-medium text-gray-700 mb-2;
-}
-
-.form-input {
-  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
-}
-
-.error-message {
-  @apply text-red-500 text-sm mt-1;
-}
-
-.success-message {
-  @apply bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg flex items-center;
-}
+/* Styles removed and moved to template to fix @apply linting issues */
 </style>
-

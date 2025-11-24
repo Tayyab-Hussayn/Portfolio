@@ -26,11 +26,11 @@
             
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <router-link to="/hire" class="btn-cta-primary">
+              <router-link to="/hire" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 <i class="fas fa-handshake mr-2"></i>
                 Hire Me
               </router-link>
-              <router-link to="/projects" class="btn-cta-secondary">
+              <router-link to="/projects" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
                 <i class="fas fa-eye mr-2"></i>
                 View Projects
               </router-link>
@@ -93,14 +93,6 @@ export default {
   background-size: 60px 60px;
 }
 
-.btn-cta-primary {
-  @apply bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
-}
-
-.btn-cta-secondary {
-  @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105;
-}
-
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -152,4 +144,3 @@ export default {
   animation-delay: 1s;
 }
 </style>
-
