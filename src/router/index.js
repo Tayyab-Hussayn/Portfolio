@@ -3,6 +3,10 @@ import Home from '../views/Home.vue'
 import Projects from '../views/Projects.vue'
 import Contact from '../views/Contact.vue'
 import Hire from '../views/Hire.vue'
+import Prompts from '../views/studio/Prompts.vue'
+import Dotfiles from '../views/studio/Dotfiles.vue'
+import DevTools from '../views/studio/DevTools.vue'
+import Resources from '../views/studio/Resources.vue'
 
 const routes = [
   {
@@ -24,6 +28,26 @@ const routes = [
     path: '/hire',
     name: 'Hire',
     component: Hire
+  },
+  {
+    path: '/studio/prompts',
+    name: 'Prompts',
+    component: Prompts
+  },
+  {
+    path: '/studio/dotfiles',
+    name: 'Dotfiles',
+    component: Dotfiles
+  },
+  {
+    path: '/studio/devtools',
+    name: 'DevTools',
+    component: DevTools
+  },
+  {
+    path: '/studio/resources',
+    name: 'Resources',
+    component: Resources
   }
 ]
 
