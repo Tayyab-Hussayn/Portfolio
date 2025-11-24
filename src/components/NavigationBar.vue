@@ -53,8 +53,8 @@
                     :to="item.path"
                     class="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors group/item"
                   >
-                    <div class="p-2 bg-blue-50 text-primary rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-colors">
-                      <component :is="item.icon" class="w-6 h-6" />
+                    <div class="p-2 bg-blue-50/50 rounded-lg group-hover/item:bg-blue-100 transition-colors">
+                      <img :src="item.icon" :alt="item.name" class="w-6 h-6 object-contain" />
                     </div>
                     <div class="ml-4">
                       <h3 class="text-base font-semibold text-gray-900 group-hover/item:text-primary transition-colors">
@@ -142,7 +142,7 @@
                 @click="closeMobileMenu"
                 class="flex items-center gap-3 px-3 py-3 text-gray-600 hover:text-primary rounded-md transition-colors"
               >
-                <component :is="item.icon" class="w-4 h-4" />
+                <img :src="item.icon" :alt="item.name" class="w-4 h-4 object-contain" />
                 <span class="text-sm font-medium">{{ item.name }}</span>
               </router-link>
             </div>
@@ -173,16 +173,12 @@
 </template>
 
 <script>
-import { ChevronDown, Terminal, FileCode, Wrench, BookOpen } from 'lucide-vue-next'
+import { ChevronDown } from 'lucide-vue-next'
 
 export default {
   name: 'NavigationBar',
   components: {
-    ChevronDown,
-    Terminal,
-    FileCode,
-    Wrench,
-    BookOpen
+    ChevronDown
   },
   emits: ['openLogin'],
   data() {
@@ -200,25 +196,25 @@ export default {
         { 
           name: 'Prompts', 
           path: '/studio/prompts', 
-          icon: 'Terminal',
+          icon: 'https://cdn-icons-png.flaticon.com/512/15311/15311499.png',
           description: 'Curated AI prompts for developers'
         },
         { 
           name: 'Dotfiles & Scripts', 
           path: '/studio/dotfiles', 
-          icon: 'FileCode',
+          icon: 'https://cdn-icons-png.flaticon.com/512/4248/4248082.png',
           description: 'System configurations and automation'
         },
         { 
           name: 'Dev Tools', 
           path: '/studio/devtools', 
-          icon: 'Wrench',
+          icon: 'https://cdn-icons-png.flaticon.com/512/7991/7991055.png',
           description: 'Essential utilities for your workflow'
         },
         { 
           name: 'Resources', 
           path: '/studio/resources', 
-          icon: 'BookOpen',
+          icon: 'https://cdn-icons-png.flaticon.com/512/1927/1927656.png',
           description: 'Guides, assets, and learning materials'
         }
       ]
