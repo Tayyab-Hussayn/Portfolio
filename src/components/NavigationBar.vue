@@ -41,7 +41,7 @@
               <!-- Mega Menu Dropdown -->
               <div 
                 v-show="isStudioOpen"
-                class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[640px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 transform origin-top ring-1 ring-black/5"
+                class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[640px] bg-[#F3F0F8]/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 transform origin-top ring-1 ring-black/5"
                 :class="{ 'opacity-100 scale-100 translate-y-0': isStudioOpen, 'opacity-0 scale-95 -translate-y-2': !isStudioOpen }"
                 @mouseenter="openStudio"
                 @mouseleave="closeStudio"
