@@ -24,8 +24,8 @@
             <!-- Studio Mega Menu -->
             <div 
               class="relative group"
-              @mouseenter="isStudioOpen = true"
-              @mouseleave="isStudioOpen = false"
+              @mouseenter="openStudio"
+              @mouseleave="closeStudio"
             >
               <button 
                 class="nav-link flex items-center gap-1 group-hover:text-primary"
@@ -43,6 +43,8 @@
                 v-show="isStudioOpen"
                 class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 transform origin-top"
                 :class="{ 'opacity-100 scale-100': isStudioOpen, 'opacity-0 scale-95': !isStudioOpen }"
+                @mouseenter="openStudio"
+                @mouseleave="closeStudio"
               >
                 <div class="p-6 grid grid-cols-2 gap-4">
                   <router-link 
@@ -188,6 +190,7 @@ export default {
       isMobileMenuOpen: false,
       isStudioOpen: false,
       isMobileStudioOpen: false,
+      closeTimer: null,
       navItems: [
         { name: 'Projects', path: '/projects' },
         { name: 'Contact Us', path: '/contact' },
@@ -228,6 +231,18 @@ export default {
     closeMobileMenu() {
       this.isMobileMenuOpen = false
       this.isMobileStudioOpen = false
+    },
+    openStudio() {
+      if (this.closeTimer) {
+        clearTimeout(this.closeTimer)
+        this.closeTimer = null
+      }
+      this.isStudioOpen = true
+    },
+    closeStudio() {
+      this.closeTimer = setTimeout(() => {
+        this.isStudioOpen = false
+      }, 300)
     }
   },
   mounted() {
