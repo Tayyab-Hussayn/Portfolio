@@ -41,26 +41,36 @@
               <!-- Mega Menu Dropdown -->
               <div 
                 v-show="isStudioOpen"
-                class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 transform origin-top"
-                :class="{ 'opacity-100 scale-100': isStudioOpen, 'opacity-0 scale-95': !isStudioOpen }"
+                class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[640px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 transform origin-top ring-1 ring-black/5"
+                :class="{ 'opacity-100 scale-100 translate-y-0': isStudioOpen, 'opacity-0 scale-95 -translate-y-2': !isStudioOpen }"
                 @mouseenter="openStudio"
                 @mouseleave="closeStudio"
               >
-                <div class="p-6 grid grid-cols-2 gap-4">
+                <!-- Decorative Top Line -->
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+
+                <div class="p-8 grid grid-cols-2 gap-6">
                   <router-link 
                     v-for="item in studioItems" 
                     :key="item.name"
                     :to="item.path"
-                    class="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors group/item"
+                    class="flex items-start p-4 rounded-xl hover:bg-gray-50/80 transition-all duration-300 group/item border border-transparent hover:border-gray-100"
                   >
-                    <div class="p-2 bg-blue-50/50 rounded-lg group-hover/item:bg-blue-100 transition-colors">
-                      <img :src="item.icon" :alt="item.name" class="w-6 h-6 object-contain" />
+                    <!-- Icon Container -->
+                    <div class="relative flex-shrink-0">
+                      <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center group-hover/item:bg-white group-hover/item:shadow-md group-hover/item:scale-110 transition-all duration-300 border border-blue-100/50">
+                        <img :src="item.icon" :alt="item.name" class="w-8 h-8 object-contain transition-transform duration-300" />
+                      </div>
+                      <!-- Tech decoration dots -->
+                      <div class="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full border-2 border-white opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <div class="ml-4">
-                      <h3 class="text-base font-semibold text-gray-900 group-hover/item:text-primary transition-colors">
+                    
+                    <div class="ml-5">
+                      <h3 class="text-base font-bold font-mono text-gray-900 group-hover/item:text-primary transition-colors flex items-center gap-2">
                         {{ item.name }}
+                        <span class="opacity-0 group-hover/item:opacity-100 transition-opacity text-xs text-primary">-></span>
                       </h3>
-                      <p class="text-sm text-gray-500 mt-1">
+                      <p class="text-sm text-gray-500 mt-1.5 leading-relaxed">
                         {{ item.description }}
                       </p>
                     </div>
@@ -68,9 +78,13 @@
                 </div>
                 
                 <!-- Bottom Bar -->
-                <div class="bg-gray-50 px-6 py-3 border-t border-gray-100">
-                  <p class="text-xs text-gray-500 text-center">
-                    Explore our digital studio resources and tools
+                <div class="bg-gray-50/80 px-8 py-4 border-t border-gray-100 flex items-center justify-between">
+                  <div class="flex items-center gap-2 text-xs text-gray-500 font-mono">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    System Online
+                  </div>
+                  <p class="text-xs text-gray-400 font-mono">
+                    // Explore our digital studio resources
                   </p>
                 </div>
               </div>
