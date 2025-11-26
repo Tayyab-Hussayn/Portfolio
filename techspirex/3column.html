@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techspirex Features</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .techspirex-features {
+            background-color: #FFFFFF;
+            padding: 80px 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .features-container {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            align-items: start;
+        }
+
+        .feature-block {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-block:hover {
+            transform: translateY(-8px);
+        }
+
+        .icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 28px;
+            background: linear-gradient(135deg, #e2e2e274 0%, #eaeaebbf 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(69, 52, 120, 0.08);
+        }
+
+        .feature-block:hover .icon-wrapper {
+            background: linear-gradient(135deg, #453478 0%, #5d4598 100%);
+            box-shadow: 0 8px 30px rgba(69, 52, 120, 0.25);
+            transform: scale(1.08);
+        }
+
+        .icon-wrapper img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            transition: all 0.4s ease;
+        }
+
+        .feature-block:hover .icon-wrapper img {
+            filter: brightness(0) invert(1);
+            transform: scale(1.1);
+        }
+
+        .feature-heading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #1A1A2E;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .feature-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #4A4A4A;
+            font-weight: 400;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .features-grid {
+                gap: 50px;
+            }
+
+            .feature-heading {
+                font-size: 22px;
+            }
+
+            .feature-text {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .techspirex-features {
+                padding: 60px 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .icon-wrapper {
+                width: 90px;
+                height: 90px;
+                margin-bottom: 24px;
+            }
+
+            .icon-wrapper img {
+                width: 44px;
+                height: 44px;
+            }
+
+            .feature-heading {
+                font-size: 22px;
+                margin-bottom: 14px;
+            }
+
+            .feature-text {
+                font-size: 15px;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .techspirex-features {
+                padding: 50px 16px;
+            }
+
+            .features-grid {
+                gap: 40px;
+            }
+
+            .icon-wrapper {
+                width: 80px;
+                height: 80px;
+            }
+
+            .icon-wrapper img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .feature-heading {
+                font-size: 20px;
+            }
+
+            .feature-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="techspirex-features">
+        <div class="features-container">
+            <div class="features-grid">
+                <!-- Feature 1: Evolve -->
+                <div class="feature-block">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2586/2586970.png" alt="Evolve Icon">
+                    </div>
+                    <h3 class="feature-heading">Evolve</h3>
+                    <p class="feature-text">We help brands evolve digitally through <br> strategy, innovation, and seamless execution.</p>
+                </div>
+
+                <!-- Feature 2: Simplify -->
+                <div class="feature-block">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2211/2211667.png" alt="Simplify Icon">
+                    </div>
+                    <h3 class="feature-heading">Simplify</h3>
+                    <p class="feature-text">Turning complex ideas into simple, powerful<br> and scalable digital solutions effortlessly.</p>
+                </div>
+
+                <!-- Feature 3: Elevate -->
+                <div class="feature-block">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2275/2275286.png" alt="Elevate Icon">
+                    </div>
+                    <h3 class="feature-heading">Elevate</h3>
+                    <p class="feature-text">Empowering businesses to elevate performance, visibility, and customer engagement globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

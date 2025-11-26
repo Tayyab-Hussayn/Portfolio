@@ -226,10 +226,10 @@ export default {
           description: 'Essential utilities for your workflow'
         },
         { 
-          name: 'Resources', 
-          path: '/studio/resources', 
+          name: 'UI Components', 
+          path: '/studio/ui-components', 
           icon: 'https://cdn-icons-png.flaticon.com/512/1927/1927656.png',
-          description: 'Guides, assets, and learning materials'
+          description: 'Premium UI components for your projects'
         }
       ]
     }

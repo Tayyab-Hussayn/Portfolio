@@ -6,7 +6,7 @@ import Hire from '../views/Hire.vue'
 import Prompts from '../views/studio/Prompts.vue'
 import Dotfiles from '../views/studio/Dotfiles.vue'
 import DevTools from '../views/studio/DevTools.vue'
-import Resources from '../views/studio/Resources.vue'
+import UIComponents from '../views/studio/UIComponents.vue'
 
 const routes = [
   {
@@ -45,9 +45,9 @@ const routes = [
     component: DevTools
   },
   {
-    path: '/studio/resources',
-    name: 'Resources',
-    component: Resources
+    path: '/studio/ui-components',
+    name: 'UIComponents',
+    component: UIComponents
   }
 ]
 
@@ -64,4 +64,3 @@ const router = createRouter({
 })
 
 export default router
-
