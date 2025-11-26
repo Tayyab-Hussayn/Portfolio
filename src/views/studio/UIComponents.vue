@@ -35,7 +35,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import ComponentCard from '@/components/studio/ComponentCard.vue'
+import ComponentCard from '../../components/studio/ComponentCard.vue'
 
 defineOptions({
   name: 'UIComponents'
