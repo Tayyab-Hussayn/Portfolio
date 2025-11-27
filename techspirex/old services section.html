@@ -1,0 +1,359 @@
+<!-- Techspirex Full-Width Services Section -->
+<style>
+    /* Services Section - Full Width Styles */
+    .techspirex-services-section {
+        width: 100%;
+        background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+        padding: 100px 0;
+        font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    /* Inner Container for Content Control */
+    .services-inner-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    /* Section Header */
+    .services-section-header {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .services-main-title {
+        font-size: 3.3rem;
+        font-weight: 800;
+        color: #453478;
+        margin-bottom: 16px;
+        letter-spacing: -1px;
+        line-height: 1.2;
+    }
+
+    .services-main-subtitle {
+        font-size: 1.2rem;
+        color: #666;
+        font-weight: 400;
+        max-width: 650px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* Full-Width Services Grid */
+    .services-full-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        margin-top: 60px;
+    }
+
+    /* Premium Service Card */
+    .premium-service-card {
+        background: #ffffff;
+        border: 1px solid #ebebeb;
+        border-radius: 16px;
+        padding: 42px 32px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    /* Top Border Accent */
+    .premium-service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #453478 0%, #6b5aa8 100%);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Hover Effects */
+    .premium-service-card:hover {
+        box-shadow: 0 12px 40px rgba(69, 52, 120, 0.12);
+        transform: translateY(-8px);
+        border-color: #453478;
+    }
+
+    .premium-service-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    /* Icon Container */
+    .premium-service-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #453478 0%, #5d4a99 100%);
+        border-radius: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 28px;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 12px rgba(69, 52, 120, 0.15);
+    }
+
+    .premium-service-card:hover .premium-service-icon {
+        transform: scale(1.08) rotate(3deg);
+        box-shadow: 0 6px 20px rgba(69, 52, 120, 0.25);
+    }
+
+    .premium-service-icon img {
+        width: 45px;
+        height: 45px;
+        filter: brightness(0) invert(1);
+        object-fit: contain;
+    }
+
+    /* Service Content */
+    .premium-service-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .premium-service-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 14px;
+        line-height: 1.3;
+        transition: color 0.3s ease;
+    }
+
+    .premium-service-card:hover .premium-service-title {
+        color: #453478;
+    }
+
+    .premium-service-desc {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.7;
+        margin-bottom: 26px;
+        flex-grow: 1;
+    }
+
+    /* Learn More Link */
+    .premium-service-link {
+        display: inline-flex;
+        align-items: center;
+        color: #453478;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: auto;
+        width: fit-content;
+    }
+
+    .premium-service-link:hover {
+        color: #5d4a99;
+        transform: translateX(6px);
+    }
+
+    .premium-service-link::after {
+        content: '→';
+        margin-left: 10px;
+        font-size: 1.1rem;
+        transition: margin-left 0.3s ease;
+        display: inline-block;
+    }
+
+    .premium-service-link:hover::after {
+        margin-left: 14px;
+    }
+
+    /* Tablet Layout - 2 Columns */
+    @media (max-width: 1024px) {
+        .services-full-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .services-inner-container {
+            padding: 0 30px;
+        }
+
+        .services-main-title {
+            font-size: 2.5rem;
+        }
+    }
+
+    /* Mobile Layout - 1 Column */
+    @media (max-width: 768px) {
+        .techspirex-services-section {
+            padding: 70px 0;
+        }
+
+        .services-inner-container {
+            padding: 0 20px;
+        }
+
+        .services-section-header {
+            margin-bottom: 50px;
+        }
+
+        .services-main-title {
+            font-size: 2rem;
+        }
+
+        .services-main-subtitle {
+            font-size: 1.05rem;
+        }
+
+        .services-full-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .premium-service-card {
+            padding: 35px 26px;
+        }
+
+        .premium-service-icon {
+            width: 64px;
+            height: 64px;
+        }
+
+        .premium-service-icon img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .premium-service-title {
+            font-size: 1.35rem;
+        }
+
+        .premium-service-desc {
+            font-size: 0.95rem;
+        }
+    }
+
+    /* Small Mobile Adjustments */
+    @media (max-width: 480px) {
+        .techspirex-services-section {
+            padding: 60px 0;
+        }
+
+        .services-inner-container {
+            padding: 0 16px;
+        }
+
+        .services-main-title {
+            font-size: 1.75rem;
+        }
+
+        .premium-service-card {
+            padding: 30px 22px;
+        }
+    }
+</style>
+
+<!-- Full-Width Services Section HTML -->
+<section class="techspirex-services-section">
+    <div class="services-inner-container">
+
+        <!-- Section Header -->
+        <div class="services-section-header">
+            <h2 class="services-main-title">Our Services</h2>
+            <p class="services-main-subtitle">Innovative Digital Solutions for Modern Businesses</p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-full-grid">
+
+            <!-- Service 1: Web & App Development -->
+            <div class="premium-service-card">
+                <div class="premium-service-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2010/2010990.png" alt="Software Development Icon">
+                </div>
+                <div class="premium-service-content">
+                    <h3 class="premium-service-title">Web & App Development</h3>
+                    <p class="premium-service-desc">Build scalable, high-performance web and mobile applications
+                        tailored to your business needs with cutting-edge technologies.</p>
+                    <a href="https://techspirex.com/service/web-app-development/" class="premium-service-link">Learn
+                        More</a>
+                </div>
+            </div>
+
+            <!-- Service 2: Graphic & UI/UX Design -->
+            <div class="premium-service-card">
+                <div class="premium-service-icon">
+                    <img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/64/external-pen-tool-graphic-design-kmg-design-flat-kmg-design.png"
+                        alt="Pen Tool Design Icon">
+                </div>
+                <div class="premium-service-content">
+                    <h3 class="premium-service-title">Graphic & UI/UX Design</h3>
+                    <p class="premium-service-desc">Create stunning visual experiences that captivate users and elevate
+                        your brand identity through thoughtful design.</p>
+                    <a href="https://techspirex.com/service/graphic-ui-ux-design" class="premium-service-link">Learn
+                        More</a>
+                </div>
+            </div>
+
+            <!-- Service 3: Digital Marketing -->
+            <div class="premium-service-card">
+                <div class="premium-service-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8292/8292355.png"
+                        alt="Social Media Marketing Icon">
+                </div>
+                <div class="premium-service-content">
+                    <h3 class="premium-service-title">Digital Marketing</h3>
+                    <p class="premium-service-desc">Drive growth with strategic campaigns across social media, email,
+                        and paid advertising channels to maximize ROI.</p>
+                    <a href="https://techspirex.com/service/digital-marketing/" class="premium-service-link">Learn
+                        More</a>
+                </div>
+            </div>
+
+            <!-- Service 4: E-commerce Solutions -->
+            <div class="premium-service-card">
+                <div class="premium-service-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/9674/9674658.png" alt="E-commerce Shopping Icon">
+                </div>
+                <div class="premium-service-content">
+                    <h3 class="premium-service-title">E-commerce Solutions</h3>
+                    <p class="premium-service-desc">Launch powerful online stores with seamless payment integration and
+                        optimized user experiences that drive conversions.</p>
+                    <a href="https://techspirex.com/service/e-commerce-solutions" class="premium-service-link">Learn
+                        More</a>
+                </div>
+            </div>
+
+            <!-- Service 5: DevOps & Cloud -->
+            <div class="premium-service-card">
+                <div class="premium-service-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5266/5266248.png" alt="DevOps Cloud Icon">
+                </div>
+                <div class="premium-service-content">
+                    <h3 class="premium-service-title">DevOps & Cloud</h3>
+                    <p class="premium-service-desc">Streamline deployment with robust cloud infrastructure and automated
+                        CI/CD pipelines for maximum efficiency.</p>
+                    <a href="https://techspirex.com/service/devops-cloud" class="premium-service-link">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Service 6: SEO Optimization -->
+            <div class="premium-service-card">
+                <div class="premium-service-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/10302/10302417.png" alt="SEO Optimization Icon">
+                </div>
+                <div class="premium-service-content">
+                    <h3 class="premium-service-title">SEO Optimization</h3>
+                    <p class="premium-service-desc">Boost your search rankings and organic traffic with data-driven SEO
+                        strategies and comprehensive insights.</p>
+                    <a href="https://techspirex.com/service/seo/" class="premium-service-link">Learn More</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
